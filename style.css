@@ -1,0 +1,14 @@
+body{
+    background-image: url(https://png.pngtree.com/background/20210715/original/pngtree-blue-simple-hand-drawn-opening-promotion-background-picture-image_1274602.jpg);
+
+}
+#formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.marcado{
+    text-decoration: line-through;
+
+}
