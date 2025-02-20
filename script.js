@@ -1,37 +1,40 @@
+const nome = document.querySelector("#nome");
+const formulario = document.querySelector("#formulario");
+const lista = document.querySelector("#lista");
 
-const nome = document.querySelector("#nome")
-const formulario = document.querySelector("#formulario")
-const lista = document.querySelector("#lista")
+formulario.addEventListener("submit", function (evento) {
+  evento.preventDefault();
 
-function adicionarTarefa(tarefa) {
-    tarefa.preventDefault()
+  const textoTarefa = nome.value.trim();
 
-    const novaTarefa = document.createElement("li")
-    const checkbox = document.createElement("input")
-    const botaoExcluir = document.createElement("button")
+  if (textoTarefa !== "") {
+    adicionarTarefa(textoTarefa);
+    nome.value = "";
+    nome.focus();
+  }
+});
 
-    checkbox.type = "checkbox"
-    checkbox.addEventListener("change",(e) => {
-        if (e.target.checked) {
-            novaTarefa.classList.add("marcado")
-        } else {
-            novaTarefa.classList.remove("marcado")
-        }
-    })
+function adicionarTarefa(textoTarefa) {
+  const novaTarefa = document.createElement("li");
 
-    botaoExcluir.textContent = "Excluir"
-    botaoExcluir.addEventListener("click",() => {
-        lista.removeChild(novaTarefa)
-    })
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.addEventListener("change", function () {
+    novaTarefa.classList.toggle("marcado");
+  });
 
-    novaTarefa.appendChild(checkbox)
-    novaTarefa.appendChild(document.createTextNode(nome.value))
-    novaTarefa.appendChild(botaoExcluir)
+  const textoElemento = document.createElement("span");
+  textoElemento.textContent = textoTarefa;
 
-    lista.appendChild(novaTarefa)
+  const botaoExcluir = document.createElement("button");
+  botaoExcluir.textContent = "Excluir";
+  botaoExcluir.addEventListener("click", function () {
+    lista.removeChild(novaTarefa);
+  });
 
-    nome.value = ""
-    nome.focus()
+  novaTarefa.appendChild(checkbox);
+  novaTarefa.appendChild(textoElemento);
+  novaTarefa.appendChild(botaoExcluir);
+
+  lista.appendChild(novaTarefa);
 }
-
-formulario.addEventListener("submit", adicionarTarefa)
