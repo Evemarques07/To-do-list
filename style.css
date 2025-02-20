@@ -1,14 +1,110 @@
-body{
-    background-image: url(https://png.pngtree.com/background/20210715/original/pngtree-blue-simple-hand-drawn-opening-promotion-background-picture-image_1274602.jpg);
-
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #f8f9fa;
+  color: #495057;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
-#formulario{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-.marcado{
-    text-decoration: line-through;
 
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  width: 85%;
+  max-width: 700px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #6c757d;
+  font-weight: 300;
+}
+
+#formulario {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #343a40;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #495057;
+}
+
+button {
+  background-color: #a8dadc;
+  color: #1d3557;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #457b9d;
+  color: #f1faee;
+}
+
+#lista {
+  list-style: none;
+  padding: 0;
+}
+
+#lista li {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+#lista li input[type="checkbox"] {
+  margin-right: 12px;
+}
+
+#lista li button {
+  background-color: #e63946;
+  color: #f1faee;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+#lista li button:hover {
+  background-color: #c62a36;
+}
+
+.marcado {
+  text-decoration: line-through;
+  color: #adb5bd;
 }
